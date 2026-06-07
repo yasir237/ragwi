@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Minicoda env
+Miniconda3-latest-Linux-x86_64.sh
