@@ -64,3 +64,32 @@ Yukarıdaki komutu çalıştırdıktan sonra terminali kapatıp yenisini açarı
 **Olası Hatalar ve Çözümleri:**
 Eğer `EnvironmentNameNotFound: Could not find conda environment: rag/ragwi` gibi bir hata ile karşılaşırsan eğer çözümü kolay.
 Önce terminalde `conda info --envs` yaz. Çıkan sonuçlarda fark edeceğiz ki rag/ragwi ortamına isim vermemişiz ondan dolayı tam yolu vererek şu şekilde aktifleştireceğiz: `conda activate /home/yasirubuntu/miniconda3/envs/rag/ragwi` (Kendi kullanıcı adına göre yolu düzenlemeyi unutma).
+
+
+### (İsteğe Bağlı) Komut ekranında yeni satır olarak başlatılır
+
+```bash
+export PS1="\[\033[01;32m\]\u@\h:\w\n\[\033[00m\]\$"
+```
+
+## Gereksinimleri İndirmek
+
+### Gereken paketlerin indirilmesi
+
+```bash
+pip install -r requirements.txt
+```
+
+### Ortam değişkenlerin ve onun public dosyası
+
+`.env` dosyasının bir kopyası olarak `.env.example` ancak boş değerlere sahip
+
+```bash
+cp .env.example .env
+```
+
+## FastAPI sunucusunun başlatılması
+
+```bash
+uvicorn main:app --reload --host 0.0.0.0 --port 5000
+```
