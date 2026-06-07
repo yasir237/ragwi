@@ -16,11 +16,11 @@ Python'u kurarken Miniconda bizlere çok güzel araçlar sağlayabilir.
 Ortamı oluşturmak için aşağıdaki komutu terminalde kullanacağız:
 
 ```bash
-conda create -n mini-rag-app python=3.11
+conda create -n rag/ragwi python=3.11
 
 ```
 
-Ancak fark etmemiz gerek şey, artık terminalde yolun yanında `(base)` kelimesinin çıktığını. İndirmek istenilen kütüphanelere `y` yazarak kabul ederiz. Son olarak bu ortamı aktifleştirmemiz gerek, bu yüzden terminale `conda activate mini-rag-app` yazıyoruz. Doğru bir şekilde aktifleştirildiği takdirde `(base)` yerine ortamın adını görmeniz gerekecektir.
+Ancak fark etmemiz gerek şey, artık terminalde yolun yanında `(base)` kelimesinin çıktığını. İndirmek istenilen kütüphanelere `y` yazarak kabul ederiz. Son olarak bu ortamı aktifleştirmemiz gerek, bu yüzden terminale `conda activate rag/ragwi` yazıyoruz. Doğru bir şekilde aktifleştirildiği takdirde `(base)` yerine ortamın adını görmeniz gerekecektir.
 
 ---
 
@@ -43,7 +43,7 @@ Biz linux ortamını kullanmak zorundayız ondan dolayı linux işletim sistemin
 Şimdi wsl terminalini kullanarak ve vs code ile bağlamak için bu adımları takip etmemiz gerek:
 
 1. Ubuntu aç.
-2. `cd /mnt/g/mini-rag-app` komutunu çalıştırarak kendi projenin yoluna git.
+2. `cd /mnt/g/rag/ragwi` komutunu çalıştırarak kendi projenin yoluna git.
 3. VS code açmak için `code .` komutunu kullan.
 4. Sonra WSL terminalinde Miniconda indirmemiz gerek, bu yüzden Miniconda resmi sayfasından linux sürümünün wget komutunu alarak terminalde çalıştırmamız gerek: `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`.
 5. Modunu değiştirmek için `chmod +x Miniconda3-latest-Linux-x86_64.sh` komutunu kullanırız.
@@ -55,12 +55,12 @@ Biz linux ortamını kullanmak zorundayız ondan dolayı linux işletim sistemin
 Şimdi yeni ortamı olutşurma zamanı geldi, şu komutu çalıştır:
 
 ```bash
-conda create -n mini-rag-app python=3.11
+conda create -n ragwi python=3.11
 
 ```
 
-Yukarıdaki komutu çalıştırdıktan sonra terminali kapatıp yenisini açarız ki projenin bulunduğu klasöre yönlendirsin direkt. Ondan sonra aktifleştiriz ortamı (`conda activate mini-rag-app`).
+Yukarıdaki komutu çalıştırdıktan sonra terminali kapatıp yenisini açarız ki projenin bulunduğu klasöre yönlendirsin direkt. Ondan sonra aktifleştiriz ortamı (`conda activate ragwi`).
 
 **Olası Hatalar ve Çözümleri:**
-Eğer `EnvironmentNameNotFound: Could not find conda environment: mini-rag-app` gibi bir hata ile karşılaşırsan eğer çözümü kolay.
-Önce terminalde `conda info -- envs` yaz. Çıkan sonuçlarda fark edeceğiz ki mini-rag-app ortamına isim vermemişiz ondan dolayı tam yolu vererek şu şekilde aktifleştireceğiz: `conda activate /home/yasirubuntu/miniconda3/envs/mini-rag-app` (Kendi kullanıcı adına göre yolu düzenlemeyi unutma).
+Eğer `EnvironmentNameNotFound: Could not find conda environment: rag/ragwi` gibi bir hata ile karşılaşırsan eğer çözümü kolay.
+Önce terminalde `conda info --envs` yaz. Çıkan sonuçlarda fark edeceğiz ki rag/ragwi ortamına isim vermemişiz ondan dolayı tam yolu vererek şu şekilde aktifleştireceğiz: `conda activate /home/yasirubuntu/miniconda3/envs/rag/ragwi` (Kendi kullanıcı adına göre yolu düzenlemeyi unutma).
