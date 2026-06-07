@@ -1,9 +1,14 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from helpers.config import get_settings, Settings
 
 base_router = APIRouter()
 
+
+
 @base_router.get("/")
-def wellcome():
+async def wellcome(settings: Settings = Depends(get_settings)):
     return {
-        "signal": "Çalışıyorum"
+        "signal": "OK",
+        "app_name": settings.APP_NAME,
+        "app_version": settings.APP_VERSION
     }
