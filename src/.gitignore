@@ -223,3 +223,7 @@ Miniconda3-latest-Linux-x86_64.sh
 
 # DB
 models/db_schemes/ragwi/alembic.ini
+
+# assets
+assets/*
+!assets/.gitkeep
