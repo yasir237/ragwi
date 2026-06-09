@@ -48,9 +48,10 @@ class ProjectController(BaseController):
         if not self.is_valid_size(len(file_content)):
             return None, ResponseSignal.FILE_SIZE_EXCEEDED
 
+        unique_filename = self.generate_unique_filename(file.filename)
         file_path = self.generate_file_path(
             project_uuid=str(project.uuid),
-            file_name=file.filename
+            file_name=unique_filename
         )
 
         with open(file_path, "wb") as f:
