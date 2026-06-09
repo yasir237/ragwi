@@ -7,3 +7,4 @@ alembic==1.18.4
 asyncpg==0.31.0
 pgvector==0.4.2
 psycopg2-binary==2.9.12
+python-multipart==0.0.32
