@@ -13,6 +13,13 @@ class Settings(BaseSettings):
     FILE_MAX_SIZE: int 
     FILE_DEFAULT_CHUNK_SIZE: int
 
+
+    GROQ_API_KEY: str
+    GROQ_MODEL: str
+    OLLAMA_BASE_URL: str
+    OLLAMA_MODEL: str
+    OLLAMA_EMBEDDING_MODEL: str
+
     class Config:
         env_file = ".env"
 

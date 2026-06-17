@@ -17,7 +17,7 @@ class DataChunk(Base):
     text: Mapped[str] = mapped_column(String, nullable=False)
     chunk_metadata: Mapped[dict] = mapped_column(JSONB, nullable=True)
     chunk_order: Mapped[int] = mapped_column(Integer, nullable=False)
-    embedding: Mapped[Vector] = mapped_column(Vector(1536), nullable=True)
+    embedding: Mapped[Vector] = mapped_column(Vector(768), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     updated_at: Mapped[datetime] = mapped_column(DateTime, nullable=True, onupdate=datetime.utcnow)
 
