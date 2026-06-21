@@ -8,6 +8,8 @@ from models.enums.AssetTypeEnum import AssetTypeEnum
 from models.enums.ProcessingEnum import ProcessingEnum
 from controllers.BaseController import BaseController
 from helpers.config import get_settings
+from tasks.process_workflow import process_and_index
+
 
 settings = get_settings()
 
@@ -67,4 +69,8 @@ class ProjectController(BaseController):
         )
 
         asset = await self.asset_model.create_asset(asset=asset)
+        
+        # Celery task'ını tetikle
+        process_and_index.delay(asset.id)
+        
         return asset, ResponseSignal.FILE_UPLOAD_SUCCESS

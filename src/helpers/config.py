@@ -20,6 +20,8 @@ class Settings(BaseSettings):
     OLLAMA_MODEL: str
     OLLAMA_EMBEDDING_MODEL: str
 
+    REDIS_URL:str
+
     class Config:
         env_file = ".env"
 
